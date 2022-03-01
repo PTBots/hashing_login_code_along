@@ -3,6 +3,8 @@ from flask_bcrypt import Bcrypt
 
 db = SQLAlchemy()
 
+bcrypt = Bcrypt()
+
 def connect_db(app):
     """Connection to database"""
 
@@ -31,7 +33,7 @@ class User(db.Model):
         return cls(username=username, password=hashed_utf8)
 
     @classmethod
-    def authenticate(cls, username, password):
+    def authenticate(cls, username, pwd):
         """Validate that user exists & password is correct
         
         Return user if valid; else return False"""
