@@ -35,7 +35,7 @@ def register_user():
         db.session.add(new_user)
         db.session.commit()
         flash('Welcome! Your Account Was Successfully Created!')
-        return redirect('/tweets.html')
+        return redirect('/tweets')
 
     return render_template('register.html', form=form)
 
